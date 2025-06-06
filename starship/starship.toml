@@ -1,0 +1,77 @@
+# Coala-inspired minimal black and white with brackets
+format = """
+$username\
+$directory\
+$git_branch\
+$git_status\
+$zig\
+$rust\
+$python\
+$golang\
+$line_break$character
+"""
+
+# Prompt symbol
+[character]
+success_symbol = "[➜](white)"
+error_symbol = "[✗](white)"
+vicmd_symbol = "[V](white)"
+
+[line_break]
+disabled = false
+
+[username]
+format = '\[❄️$user\]'
+style_user = "white"
+style_root = "white"
+disabled = false
+show_always = true
+
+[directory]
+format = '\[$path\]'
+style = "white"
+read_only = " "
+read_only_style = "white"
+
+[git_branch]
+format = '\[ $branch\]'
+style = "white"
+symbol = ""
+
+[git_status]
+format = '\[${all_status}${ahead_behind}\]'
+style = "white"
+
+# Languages
+
+[zig]
+symbol = "🦎"
+format = '\[ $symbol($version) \]'
+style = "white"
+
+[rust]
+symbol = "🦀"
+format = '\[ $symbol($version) \]'
+style = "white"
+
+[python]
+symbol = "🐍"
+format = '\[ $symbol($version) \]'
+style = "white"
+python_binary = "python3"
+
+[golang]
+symbol = "🐹"
+format = '\[ $symbol($version) \]'
+style = "white"
+
+# Show NixOS Icon (not shell)
+[os]
+format = '\[❄️ NixOS\]'
+style = "white"
+disabled = false
+
+# Disable nix_shell because you're using Zsh, not in nix-shell
+[nix_shell]
+disabled = true
+
